@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61ADA628-9F40-48D4-AEEC-D990D98EA72E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fareportal.TestProject.AutomationTesting.Common</RootNamespace>
+    <AssemblyName>Fareportal.TestProject.AutomationTesting.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Faker.NET4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Faker.Net.1.0.3\lib\net40\Faker.NET4.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.2.4.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataManager\DataBuilding\BuilderStorage.cs" />
+    <Compile Include="DataManager\DataReceiving\Responses\ReceivedAlbum.cs" />
+    <Compile Include="DataManager\DataReceiving\Responses\ReceivedUser.cs" />
+    <Compile Include="PermanentTestData\TestData.cs" />
+    <Compile Include="Authorization\RestClientHelper.cs" />
+    <Compile Include="DataManager\DataBuilding\Builders\DefaultBuilder.cs" />
+    <Compile Include="DataManager\DataBuilding\Builders\IDataBuilder.cs" />
+    <Compile Include="DataManager\DataBuilding\Builders\TestProjectBuilders\PostBuilder.cs" />
+    <Compile Include="DataManager\DataBuilding\DataBuilder.cs" />
+    <Compile Include="DataManager\DataBuilding\DataGeneratorFactory.cs" />
+    <Compile Include="DataManager\DataBuilding\Data\Post.cs" />
+    <Compile Include="DataManager\DataBuilding\IDataGeneratable.cs" />
+    <Compile Include="DataManager\DataBuilding\ObjectToPostId.cs" />
+    <Compile Include="DataManager\DataDestruction\DataDestructor.cs" />
+    <Compile Include="DataManager\DataManager.cs" />
+    <Compile Include="DataManager\DataReceiving\DataReceiver.cs" />
+    <Compile Include="DataManager\DataReceiving\Receivers\DefaultListReceiver.cs" />
+    <Compile Include="DataManager\DataReceiving\Receivers\DefaultReceiver.cs" />
+    <Compile Include="DataManager\DataReceiving\Receivers\IDataReceiver.cs" />
+    <Compile Include="DataManager\DataReceiving\Receivers\IListDataReceiver.cs" />
+    <Compile Include="DataManager\DataReceiving\Responses\ReceivedComment.cs" />
+    <Compile Include="DataManager\DataReceiving\Responses\ReceivedPhoto.cs" />
+    <Compile Include="DataManager\DataReceiving\Responses\ReceivedPost.cs" />
+    <Compile Include="DataManager\DataReceiving\Responses\ReceivedTodo.cs" />
+    <Compile Include="DataManager\Shared\BuilderResolver.cs" />
+    <Compile Include="DataManager\Shared\ErrorMessageStorage.cs" />
+    <Compile Include="DataManager\Shared\RequestHelper.cs" />
+    <Compile Include="DataManager\Shared\UrlResolver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolutionSharedSteps.cs" />
+    <Compile Include="Utils\Extensions.cs" />
+    <Compile Include="Utils\Helpers.cs" />
+    <Compile Include="Utils\Parameters\ParamKeys.cs" />
+    <Compile Include="Utils\Parameters\ParamValues.cs" />
+    <Compile Include="Utils\Randomizer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fareportal.AutomationFramework.RestClient\Fareportal.AutomationFramework.RestClient.csproj">
+      <Project>{8364DC11-A3D8-4F72-922D-4C4E10FD4AB7}</Project>
+      <Name>Fareportal.AutomationFramework.RestClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PermanentTestData\Images\d32776.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\SpecFlow.2.4.0\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.0\build\SpecFlow.targets'))" />
+  </Target>
+</Project>
